@@ -1,0 +1,138 @@
+2026-02-22 03:20:20,501 - services.database - INFO - БД ініціалізовано: bot_data.db
+2026-02-22 03:20:20,501 - __main__ - INFO - База даних ініціалізована
+2026-02-22 03:20:23,581 - __main__ - INFO - Вебхук встановлено: https://your-app.railway.app/webhook
+2026-02-22 03:20:23,583 - __main__ - INFO - Вебсервер запущено на 0.0.0.0:8080
+2026-02-22 03:21:14,219 - services.database - INFO - З'єднання з БД закрито
+2026-02-22 03:21:14,369 - __main__ - INFO - Бот зупинено
+2026-02-22 03:21:27,749 - services.database - INFO - БД ініціалізовано: bot_data.db
+2026-02-22 03:21:27,749 - __main__ - INFO - База даних ініціалізована
+2026-02-22 03:21:27,922 - __main__ - INFO - Polling режим активовано
+2026-02-22 03:21:27,923 - aiogram.dispatcher - INFO - Start polling
+2026-02-22 03:21:27,988 - aiogram.dispatcher - INFO - Run polling for bot @LublinwolfL_bot id=8011002307 - 'wolfSHopfast'
+2026-02-22 03:21:34,885 - handlers.user - INFO - Новий користувач запустив бот (id=***)
+2026-02-22 03:21:34,886 - aiogram.event - INFO - Update id=785983764 is handled. Duration 202 ms by bot id=8011002307
+2026-02-22 03:21:37,913 - aiogram.event - INFO - Update id=785983765 is handled. Duration 250 ms by bot id=8011002307
+2026-02-22 03:21:42,304 - middlewares.logging - ERROR - Помилка обробки: Telegram server says - Bad Request: text must be non-empty
+Traceback (most recent call last):
+  File "C:\Users\Bohdan\Desktop\anon\middlewares\logging.py", line 31, in __call__
+    result = await handler(event, data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\Desktop\anon\handlers\user.py", line 115, in receive_question
+    await message.answer("‌", reply_markup=ReplyKeyboardRemove())  # Прибираємо reply keyboard
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\client\bot.py", line 488, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\client\session\aiohttp.py", line 189, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: text must be non-empty
+2026-02-22 03:21:42,398 - aiogram.event - INFO - Update id=785983766 is not handled. Duration 140 ms by bot id=8011002307
+2026-02-22 03:21:42,398 - aiogram.event - ERROR - Cause exception while process update id=785983766 by bot id=8011002307
+TelegramBadRequest: Telegram server says - Bad Request: text must be non-empty
+Traceback (most recent call last):
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\Desktop\anon\middlewares\throttling.py", line 40, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\Desktop\anon\middlewares\logging.py", line 31, in __call__
+    result = await handler(event, data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\Desktop\anon\handlers\user.py", line 115, in receive_question
+    await message.answer("‌", reply_markup=ReplyKeyboardRemove())  # Прибираємо reply keyboard
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\client\bot.py", line 488, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\client\session\aiohttp.py", line 189, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bohdan\AppData\Local\Programs\Python\Python312\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: text must be non-empty
+2026-02-22 03:22:28,686 - aiogram.dispatcher - INFO - Polling stopped
+2026-02-22 03:22:28,697 - services.database - INFO - З'єднання з БД закрито
+2026-02-22 03:22:28,697 - __main__ - INFO - Бот зупинено
+2026-02-22 03:22:28,959 - aiogram.dispatcher - INFO - Polling stopped for bot @LublinwolfL_bot id=8011002307 - 'wolfSHopfast'
+2026-02-22 03:23:45,317 - services.database - INFO - БД ініціалізовано: bot_data.db
+2026-02-22 03:23:45,317 - __main__ - INFO - База даних ініціалізована
+2026-02-22 03:23:45,545 - __main__ - INFO - Polling режим активовано
+2026-02-22 03:23:45,546 - aiogram.dispatcher - INFO - Start polling
+2026-02-22 03:23:45,601 - aiogram.dispatcher - INFO - Run polling for bot @LublinwolfL_bot id=8011002307 - 'wolfSHopfast'
+2026-02-22 03:23:58,926 - aiogram.event - INFO - Update id=785983767 is not handled. Duration 0 ms by bot id=8011002307
+2026-02-22 03:24:07,686 - handlers.user - INFO - Новий користувач запустив бот (id=***)
+2026-02-22 03:24:07,687 - aiogram.event - INFO - Update id=785983768 is handled. Duration 203 ms by bot id=8011002307
+2026-02-22 03:24:09,322 - aiogram.event - INFO - Update id=785983769 is handled. Duration 264 ms by bot id=8011002307
+2026-02-22 03:24:11,941 - aiogram.event - INFO - Update id=785983770 is handled. Duration 235 ms by bot id=8011002307
+2026-02-22 03:24:14,481 - handlers.user - INFO - Питання #E8FCD386 надіслано анонімно (адмінів: 1)
+2026-02-22 03:24:14,540 - aiogram.event - INFO - Update id=785983771 is handled. Duration 250 ms by bot id=8011002307
+2026-02-22 03:24:18,616 - aiogram.event - INFO - Update id=785983772 is handled. Duration 157 ms by bot id=8011002307
+2026-02-22 03:24:25,077 - services.database - INFO - [АНОНІМНІСТЬ] user_id видалено для запиту E8FCD386
+2026-02-22 03:24:25,151 - handlers.admin - INFO - Відповідь на #E8FCD386 доставлена. user_id видалено.
+2026-02-22 03:24:25,151 - aiogram.event - INFO - Update id=785983773 is handled. Duration 187 ms by bot id=8011002307
+2026-02-22 03:24:43,129 - handlers.user - INFO - Оцінка 1 для запиту #E8FCD386
+2026-02-22 03:24:43,130 - aiogram.event - INFO - Update id=785983774 is handled. Duration 234 ms by bot id=8011002307
